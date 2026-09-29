@@ -7,12 +7,13 @@ Friperie / vintage store à Saint-Junien (87200).
 - Contact : à compléter (Prénom NOM, téléphone, email)
 - Statut du projet : maquette démo (avant devis)
 - Domaine : à définir — registrar : — expire le : — au nom de : client
-- Code : https://github.com/BYOBBB/the-lab-saint-junien (privé, branche main) — à transférer plus tard sur le GitHub d'un associé
+- Code : https://github.com/BYOBBB/the-lab-saint-junien (privé, branche main) — dossier publié : `site/` — à transférer plus tard sur le GitHub d'un associé
 - Hébergement : à définir
 - Mise en ligne : —
 - Contrat maintenance : —
 
 ## Historique
+- 30/09/2026 : site déplacé dans `site/` (seul dossier à publier) + `site/_headers` (modèle, CSP à adapter : GSAP, Fontshare)
 - 29/09/2026 : ouverture du dossier projet, maquette démo de l'accueil (index.html), mise sur GitHub (privé)
 
 ## Checklist (voir _methode/3-etapes-creation.md)
@@ -31,7 +32,7 @@ Page d'accueil seule, pour présenter le projet au client avant le devis.
 Style : `gpt-taste` (sombre, vert « labo », animations GSAP au scroll). Aperçu local : config `thelab` dans `.claude/launch.json` (port 8780).
 
 À remplacer / confirmer avant d'aller plus loin :
-- Photos `assets/img/demo/` = photos Unsplash d'ambiance (chaque photo en 2 tailles : `-640` et `-1200`, WebP), à remplacer par les vraies photos de la boutique en gardant ce double format
+- Photos `site/assets/img/demo/` = photos Unsplash d'ambiance (chaque photo en 2 tailles : `-640` et `-1200`, WebP), à remplacer par les vraies photos de la boutique en gardant ce double format
 - Horaires affichés = inventés, à confirmer
 - Numéro exact place Guy Mocquet, téléphone, email
 - Textes (arrivages chaque semaine, etc.) à valider avec la boutique
@@ -48,7 +49,7 @@ Images de départ/fin et vidéo d'essai gardées dans `_admin/contenu-recu/anima
 
 ## Fond animé du haut de page (version principale depuis le 29/09/2026)
 
-`index.html` : haut de page sombre avec la photo de la boutique tramée et animée (recréation Canvas2D
-du réglage « Surf BG 2 » de 21st.dev/community/ascii, adoucie). Fichiers : `assets/css/ascii.css`,
-`assets/js/ascii-bg.js`. L'ancienne version (photo flottante sur fond blanc) est gardée dans
-`index-classique.html` (noindex), à supprimer avant la mise en ligne si elle n'est plus utile.
+`site/index.html` : haut de page sombre avec la photo de la boutique tramée et animée (recréation Canvas2D
+du réglage « Surf BG 2 » de 21st.dev/community/ascii, adoucie). Fichiers : `site/assets/css/ascii.css`,
+`site/assets/js/ascii-bg.js`. L'ancienne version (photo flottante sur fond blanc) est gardée dans
+`site/index-classique.html` (noindex), à supprimer avant la mise en ligne si elle n'est plus utile.
