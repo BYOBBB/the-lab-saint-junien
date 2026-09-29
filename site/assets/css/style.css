@@ -1,5 +1,6 @@
 /* The Lab - maquette démo
-   Thème : clair (fond blanc), accent bleu indigo profond, rappel du denim brut.
+   Thème : clair (fond blanc cassé), couleurs du vrai logo : jaune + violet.
+   Couleurs relevées sur la photo de profil Instagram (à confirmer avec le logo HD).
    Rayons : pilule pour les contrôles, 20px pour les médias et cellules. */
 
 :root {
@@ -9,9 +10,12 @@
   --text: #141418;
   --muted: #5c5c63;
   --line: rgb(20 20 24 / .1);
-  --accent: #1e3a8f;          /* indigo « denim brut » */
+  --brand-yellow: #fede5a;    /* fond du logo */
+  --brand-violet: #8256d5;    /* lettrage du logo */
+  --violet-deep: #33206a;     /* texte sur jaune (contraste AA) */
+  --accent: #6d43c9;          /* violet du logo, un cran plus profond pour les boutons et textes */
   --on-accent: #fbfbf9;
-  --accent-text: #1e3a8f;
+  --accent-text: #6d43c9;
 
   --radius: 20px;
   --pill: 999px;
@@ -42,8 +46,9 @@ body {
 }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
-h1, h2, h3 { margin: 0; font-weight: 800; letter-spacing: -.03em; line-height: 1.02; }
-p { margin: 0; }
+h1, h2, h3 { margin: 0; font-weight: 800; letter-spacing: -.03em; line-height: 1.02; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+::selection { background: var(--brand-yellow); color: var(--violet-deep); }
 figure { margin: 0; }
 a, button, [role="button"] { touch-action: manipulation; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
@@ -81,29 +86,28 @@ a, button, [role="button"] { touch-action: manipulation; }
   padding: 0 10px 0 18px; border-radius: var(--pill);
   background: rgb(251 251 249 / .72);
   border: 1px solid rgb(20 20 24 / .08);
-  box-shadow: 0 12px 40px rgb(30 40 80 / .1);
+  box-shadow: 0 12px 40px rgb(40 22 80 / .1);
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
 }
-.logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.125rem; letter-spacing: -.02em; text-decoration: none; }
-.logo-mark {
-  display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
-  background: var(--accent); color: var(--on-accent); font-size: .9375rem; font-weight: 800;
+/* Logo provisoire : pastille jaune + lettrage violet, comme le vrai logo */
+.logo-badge {
+  display: inline-flex; align-items: center; height: 38px; padding: 0 14px;
+  border-radius: 10px; background: var(--brand-yellow); color: var(--brand-violet);
+  font-weight: 800; font-style: italic; font-size: 1.125rem; letter-spacing: -.01em;
+  text-transform: uppercase; text-decoration: none; white-space: nowrap;
+  transform: rotate(-2deg);
+  transition: transform 200ms var(--ease-out);
 }
-/* Instagram en entrée de site, en haut à gauche du menu */
+@media (hover: hover) and (pointer: fine) { .logo-badge:hover { transform: rotate(0deg) scale(1.03); } }
+.nav-actions { display: flex; align-items: center; gap: 8px; }
 .nav-insta {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-weight: 700; font-size: 1rem; letter-spacing: -.01em; text-decoration: none;
-  transition: color 200ms;
+  display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  color: var(--text); background: rgb(20 20 24 / .06);
+  transition: background-color 200ms, color 200ms, transform 160ms var(--ease-out);
 }
-.nav-insta-icon {
-  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
-  background: var(--accent); color: var(--on-accent);
-  transition: transform 160ms var(--ease-out);
-}
-.nav-insta:active .nav-insta-icon { transform: scale(.94); }
-@media (hover: hover) and (pointer: fine) { .nav-insta:hover { color: var(--accent-text); } }
-@media (max-width: 380px) { .nav-insta { font-size: .9375rem; gap: 8px; } }
+.nav-insta:active { transform: scale(.94); }
+@media (hover: hover) and (pointer: fine) { .nav-insta:hover { background: var(--accent); color: var(--on-accent); } }
 .nav-links { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
 .nav-links a { text-decoration: none; color: var(--muted); font-weight: 700; font-size: .9375rem; transition: color 200ms; }
 @media (hover: hover) and (pointer: fine) { .nav-links a:hover { color: var(--text); } }
@@ -144,14 +148,14 @@ a, button, [role="button"] { touch-action: manipulation; }
   .hero-media { position: relative; right: auto; bottom: auto; width: 78%; margin: 40px 0 0 auto; }
 }
 
-/* Bandeau défilant (unique sur la page) : bande indigo, capitales fines et espacées */
+/* Bandeau défilant (unique sur la page) : jaune + violet, comme le logo */
 .marquee {
   padding: 20px 0; overflow: hidden;
-  background: var(--accent); color: var(--on-accent);
+  background: var(--brand-yellow); color: var(--violet-deep);
 }
 .marquee-track {
   display: flex; align-items: center; gap: 36px; width: max-content;
-  font-size: clamp(.875rem, 1.1vw, 1.0625rem); font-weight: 500; letter-spacing: .32em; text-transform: uppercase;
+  font-size: clamp(.875rem, 1.1vw, 1.0625rem); font-weight: 700; letter-spacing: .32em; text-transform: uppercase;
   white-space: nowrap;
   padding-right: 36px; /* = gap : la boucle à -50 % retombe pile, sans saut */
   animation: marquee 60s linear infinite;
@@ -227,8 +231,8 @@ a, button, [role="button"] { touch-action: manipulation; }
 .cell-a figcaption { position: relative; z-index: 1; padding: 28px; color: #f4f3ee; display: grid; gap: 10px; }
 .cell-a figcaption p { color: rgb(244 243 238 / .82); }
 .cell-a::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgb(10 10 9 / .82), rgb(10 10 9 / 0) 55%); }
-.cell-b { grid-column: span 2; background: var(--accent); color: var(--on-accent); }
-.cell-b p { color: rgb(251 251 249 / .8); }
+.cell-b { grid-column: span 2; background: var(--brand-yellow); color: var(--violet-deep); }
+.cell-b p { color: rgb(51 32 106 / .82); }
 .cell-c { background: var(--surface-2); }
 .cell-d { padding: 0; }
 .link-arrow { font-weight: 800; text-decoration: none; margin-top: 6px; }
@@ -301,7 +305,8 @@ a, button, [role="button"] { touch-action: manipulation; }
 }
 .wordmark-text span { display: inline-block; }
 .wordmark-text .gap { width: .22em; }
-.wordmark-text span:nth-child(n+5) { color: var(--accent-text); }
+.wordmark-text span:nth-child(n+5) { color: var(--brand-violet); }
+.wordmark-text .dot { color: var(--brand-yellow); -webkit-text-stroke: .012em var(--violet-deep); }
 
 /* Action */
 .infos { padding-bottom: clamp(96px, 12vw, 160px); }

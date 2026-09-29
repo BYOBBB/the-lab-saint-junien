@@ -2,7 +2,7 @@
    Réglages adoucis par rapport à l'original (scintillement, glitch, trame) pour le confort visuel.
    Recréation Canvas2D du réglage « Surf BG 2 » de 21st.dev/community/ascii :
    photo d'origine (90 %) + trame dither inversée en cellules de 18 px sur 48 % des cellules,
-   fusion overlay, teinte #111346 à 45 %, puis vignette, lignes de balayage, aberration
+   fusion overlay, teinte #241447 (violet de la marque, assombri) à 45 %, puis vignette, lignes de balayage, aberration
    chromatique, halo, grain et glitch, animé en « flicker ».
    Performance : tout ce qui est coûteux (trame, halo, aberration) est pré-calculé une fois
    par taille d'écran en 3 variantes ; chaque image ne fait que superposer des calques.
@@ -18,7 +18,7 @@
     edge: 0.4,           // accentuation des contours
     contrast: 1.5,
     bgOpacity: 0.9,
-    tint: "#111346",
+    tint: "#241447",
     tintOpacity: 0.45,
     vignette: 0.3,
     scan: 0.14,
@@ -71,7 +71,7 @@
     /* Fond : photo à 90 % sur un fond sombre */
     base = mk(W, H);
     var b = base.getContext("2d");
-    b.fillStyle = "#0b0c1c";
+    b.fillStyle = "#140d22";
     b.fillRect(0, 0, W, H);
     b.globalAlpha = P.bgOpacity;
     b.drawImage(photo, 0, 0);

@@ -13,6 +13,7 @@ Friperie / vintage store à Saint-Junien (87200).
 - Contrat maintenance : —
 
 ## Historique
+- 30/09/2026 : couleurs de la marque (jaune #FEDE5A / violet #8256D5, relevées sur la photo de profil Instagram, à confirmer avec le logo HD) à la place de l'indigo ; logo provisoire « THE LAB. » dans le menu et le pied de page ; nom de la boutique dans le haut de page
 - 30/09/2026 : site déplacé dans `site/` (seul dossier à publier) + `site/_headers` (modèle, CSP à adapter : GSAP, Fontshare)
 - 29/09/2026 : ouverture du dossier projet, maquette démo de l'accueil (index.html), mise sur GitHub (privé)
 
@@ -36,7 +37,7 @@ Style : `gpt-taste` (sombre, vert « labo », animations GSAP au scroll). Aperç
 - Horaires affichés = inventés, à confirmer
 - Numéro exact place Guy Mocquet, téléphone, email
 - Textes (arrivages chaque semaine, etc.) à valider avec la boutique
-- Logo : pastille « L » provisoire
+- Logo : pastille CSS « THE LAB. » jaune/violet provisoire (classe `.logo-badge`), à remplacer par le vrai logo HD
 - Police Cabinet Grotesk chargée depuis Fontshare : à auto-héberger pour la mise en ligne
 - Pages légales non créées (liens `#` dans le pied de page)
 - Lien Facebook provisoire (`https://www.facebook.com/`, 2 endroits marqués TODO dans index.html) : demander l'adresse exacte de la page
