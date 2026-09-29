@@ -1,4 +1,4 @@
-/* The Lab - maquette démo : accordéon, bandeau, animations GSAP, boutique à défilement horizontal */
+/* The Lab - maquette démo : accordéon, animations GSAP, boutique à défilement horizontal */
 (function () {
   "use strict";
 
@@ -17,14 +17,6 @@
       item.addEventListener("mouseenter", function () { openItem(item); });
     }
   });
-
-  /* Bandeau défilant : animation en pause quand il n'est pas visible (économise le processeur) */
-  var marquee = document.querySelector(".marquee");
-  if (marquee && "IntersectionObserver" in window) {
-    new IntersectionObserver(function (entries) {
-      marquee.classList.toggle("is-off", !entries[0].isIntersecting);
-    }).observe(marquee);
-  }
 
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduce || !window.gsap || !window.ScrollTrigger) return;

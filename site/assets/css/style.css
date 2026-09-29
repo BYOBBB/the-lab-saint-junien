@@ -164,22 +164,6 @@ a, button, [role="button"] { touch-action: manipulation; }
   .hero-media { position: relative; right: auto; bottom: auto; width: 78%; margin: 40px 0 0 auto; }
 }
 
-/* Bandeau défilant (unique sur la page) : jaune + violet, comme le logo */
-.marquee {
-  padding: 20px 0; overflow: hidden;
-  background: var(--brand-yellow); color: var(--violet-deep);
-}
-.marquee-track {
-  display: flex; align-items: center; gap: 36px; width: max-content;
-  font-size: clamp(.875rem, 1.1vw, 1.0625rem); font-weight: 700; letter-spacing: .32em; text-transform: uppercase;
-  white-space: nowrap;
-  padding-right: 36px; /* = gap : la boucle à -50 % retombe pile, sans saut */
-  animation: marquee 60s linear infinite;
-}
-.marquee-track i { width: 5px; height: 5px; border-radius: 50%; background: currentColor; opacity: .45; flex: none; }
-@keyframes marquee { to { transform: translateX(-50%); } }
-.marquee.is-off .marquee-track { animation-play-state: paused; } /* pas d'animation hors écran */
-
 /* Sections */
 .manifesto, .rayons, .why, .infos {
   max-width: var(--max); margin: 0 auto;
@@ -353,7 +337,6 @@ a, button, [role="button"] { touch-action: manipulation; }
 /* Mouvement réduit : tout reste statique */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .marquee-track { animation: none; }
   .acc-item, .acc-item img, .acc-body p { transition: none; }
 }
 
