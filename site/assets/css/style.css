@@ -102,12 +102,28 @@ a, button, [role="button"] { touch-action: manipulation; }
 @media (hover: hover) and (pointer: fine) { .logo-badge:hover { transform: rotate(0deg) scale(1.03); } }
 .nav-actions { display: flex; align-items: center; gap: 8px; }
 .nav-insta {
-  display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
-  color: var(--text); background: rgb(20 20 24 / .06);
-  transition: background-color 200ms, color 200ms, transform 160ms var(--ease-out);
+  display: inline-flex; align-items: center; gap: 7px; height: 40px; padding: 0 12px;
+  border-radius: var(--pill); color: var(--text); text-decoration: none;
+  font-weight: 700; font-size: .9375rem; letter-spacing: -.01em; white-space: nowrap;
+  transition: color 200ms, transform 160ms var(--ease-out);
 }
-.nav-insta:active { transform: scale(.94); }
-@media (hover: hover) and (pointer: fine) { .nav-insta:hover { background: var(--accent); color: var(--on-accent); } }
+.nav-insta svg { flex: none; color: var(--accent); }
+.nav-insta:active { transform: scale(.97); }
+@media (hover: hover) and (pointer: fine) { .nav-insta:hover { color: var(--accent-text); } }
+/* Téléphone : logo, Instagram écrit et bouton doivent tenir sur une ligne */
+@media (max-width: 480px) {
+  .nav { padding: 0 6px 0 10px; gap: 6px; }
+  .logo-badge { height: 32px; padding: 0 9px; font-size: .9375rem; }
+  .nav-actions { gap: 2px; }
+  .nav-insta { padding: 0 6px; gap: 5px; font-size: .8125rem; }
+  .nav-insta svg { width: 16px; height: 16px; }
+  .nav .btn-sm { padding: 0 12px; font-size: .8125rem; min-height: 38px; }
+}
+@media (max-width: 350px) {
+  .nav-insta svg { display: none; }
+  .logo-badge { padding: 0 7px; font-size: .875rem; }
+  .nav .btn-sm { padding: 0 10px; }
+}
 .nav-links { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
 .nav-links a { text-decoration: none; color: var(--muted); font-weight: 700; font-size: .9375rem; transition: color 200ms; }
 @media (hover: hover) and (pointer: fine) { .nav-links a:hover { color: var(--text); } }
