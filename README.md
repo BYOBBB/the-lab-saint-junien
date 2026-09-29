@@ -7,12 +7,13 @@ Friperie / vintage store à Saint-Junien (87200).
 - Contact : à compléter (Prénom NOM, téléphone, email)
 - Statut du projet : maquette démo (avant devis)
 - Domaine : à définir — registrar : — expire le : — au nom de : client
+- Code : https://github.com/BYOBBB/the-lab-saint-junien (privé, branche main) — à transférer plus tard sur le GitHub d'un associé
 - Hébergement : à définir
 - Mise en ligne : —
 - Contrat maintenance : —
 
 ## Historique
-- 29/09/2026 : ouverture du dossier projet, maquette démo de l'accueil (index.html)
+- 29/09/2026 : ouverture du dossier projet, maquette démo de l'accueil (index.html), mise sur GitHub (privé)
 
 ## Checklist (voir _methode/3-etapes-creation.md)
 - [ ] Devis signé + acompte reçu
