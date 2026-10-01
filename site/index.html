@@ -1,35 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>The Lab, friperie vintage à Saint-Junien</title>
-  <meta name="description" content="The Lab, friperie et vintage store place Guy Mocquet à Saint-Junien : denim, vestes, sportswear et pièces uniques chinées une à une. Arrivages réguliers.">
-  <meta name="theme-color" content="#140d22">
-  <meta name="color-scheme" content="light">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friperie vintage — The Lab — Saint-Junien</title>
+  <meta name="description" content="The Lab, friperie vintage place Guy Mocquet à Saint-Junien : des pièces de seconde main choisies une à une, vérifiées, à prix de friperie.">
+  <!-- Démo de prospection : retirer noindex à la mise en ligne -->
+  <meta name="robots" content="noindex">
+  <!-- Domaine à définir : remplacer https://thelab-vintage.fr/ partout (canonical, og:url, JSON-LD, sitemap) -->
+  <link rel="canonical" href="https://thelab-vintage.fr/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="The Lab, friperie vintage à Saint-Junien">
-  <meta property="og:description" content="Denim, vestes, sportswear et pièces uniques chinées une à une, place Guy Mocquet.">
-  <meta property="og:image" content="assets/img/demo/p1-1200.webp">
-
-  <!-- Démo : police servie par Fontshare. À auto-héberger avant la mise en ligne. -->
-  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <!-- Chargée sans bloquer l'affichage : le texte s'affiche tout de suite en police système -->
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&display=swap"></noscript>
-  <link rel="preload" as="image" href="assets/img/demo/p1-1200.webp">
-  <link rel="stylesheet" href="assets/css/style.css?v=17">
-  <link rel="stylesheet" href="assets/css/ascii.css?v=2">
-
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Friperie vintage — The Lab — Saint-Junien">
+  <meta property="og:description" content="Des pièces vintage choisies une à une, vérifiées, à prix de friperie. Place Guy Mocquet, Saint-Junien.">
+  <meta property="og:url" content="https://thelab-vintage.fr/">
+  <meta property="og:image" content="https://thelab-vintage.fr/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f4f3f0">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="fonts/BricolageGrotesque-latin-3y9K6as8.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="kodai.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ClothingStore",
     "name": "The Lab Vintage Store",
-    "description": "Friperie et vintage store à Saint-Junien.",
+    "description": "Friperie vintage à Saint-Junien.",
+    "url": "https://thelab-vintage.fr/",
+    "image": "https://thelab-vintage.fr/images/og.jpg",
+    "logo": "https://thelab-vintage.fr/images/logo.jpg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Place Guy Mocquet",
@@ -43,178 +47,200 @@
 </head>
 <body>
 
-  <header class="nav-wrap">
-    <nav class="nav" aria-label="Navigation principale">
-      <!-- Logo provisoire en CSS, aux couleurs du vrai logo (jaune / violet) : à remplacer par le fichier HD -->
-      <a href="#top" class="logo-badge" aria-label="The Lab, retour en haut de page">The Lab.</a>
-      <ul class="nav-links">
-        <li><a href="#univers">Univers</a></li>
-        <li><a href="#rayons">Rayons</a></li>
-        <li><a href="#boutique">Boutique</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="https://www.instagram.com/thelab.vintage/" class="nav-insta" target="_blank" rel="noopener" aria-label="The Lab sur Instagram : @thelab.vintage">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
-          <span>@thelab.vintage</span>
-        </a>
-        <a href="#infos" class="btn btn-accent btn-sm">Nous trouver</a>
-      </div>
-    </nav>
-  </header>
+  <!-- ══════════ PRELOADER ══════════ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <p class="loader-wordmark">The Lab</p>
+      <span class="loader-rule"><i id="loaderBar"></i></span>
+    </div>
+  </div>
 
-  <main id="top" class="page">
+  <!-- ══════════ CONTENU ══════════ -->
+  <main class="smooth" id="smooth">
 
-    <!-- Attention -->
-    <section class="hero hero--ascii">
-      <canvas class="ascii-bg" aria-hidden="true" data-src="assets/img/demo/p1-1200.webp" data-src-portrait="assets/img/demo/p6-1200.webp"></canvas>
-      <div class="hero-text">
-        <p class="eyebrow">The Lab · Friperie à Saint-Junien</p>
-        <h1 class="hero-title">
-          <span class="line"><span>Le vintage vient à vous,</span></span>
-          <span class="line"><span>en plein <em>Saint-Junien.</em></span></span>
-        </h1>
-        <p class="hero-sub">Denim, vestes, sportswear et pièces uniques chinées une à une. De nouveaux arrivages chaque semaine.</p>
-        <div class="hero-ctas">
-          <a href="#infos" class="btn btn-accent">Nous trouver</a>
-          <a href="https://www.instagram.com/thelab.vintage/" class="btn btn-ghost" target="_blank" rel="noopener">Voir l'Instagram</a>
+    <!-- ─── SCÈNE 1 · PASTEBOARD → ZOOM TEXTE → SÉRIE EN LUMIÈRE ─── -->
+    <section class="scene s-hero" id="hero" data-pin="5">
+      <div class="pin">
+
+        <div class="floaters" aria-hidden="true">
+          <figure class="fl" style="--x:-4%;  --y:13%; --w:196px" data-d="0.55"><img src="images/fl-01.jpg" alt=""></figure>
+          <figure class="fl" style="--x:21%;   --y:3%; --w:142px" data-d="0.90"><img src="images/fl-02.jpg" alt=""></figure>
+          <figure class="fl" style="--x:40%;  --y:-8%; --w:232px" data-d="0.40"><img src="images/fl-03.jpg" alt=""></figure>
+          <figure class="fl" style="--x:63%;  --y:7%; --w:126px" data-d="0.75"><img src="images/fl-04.jpg" alt=""></figure>
+          <figure class="fl" style="--x:85%;  --y:1%; --w:208px" data-d="1.00"><img src="images/fl-05.jpg" alt=""></figure>
+          <figure class="fl" style="--x:-2%;  --y:45%; --w:116px" data-d="0.50"><img src="images/fl-06.jpg" alt=""></figure>
+          <figure class="fl" style="--x:94%;  --y:37%; --w:172px" data-d="0.70"><img src="images/fl-07.jpg" alt=""></figure>
+          <figure class="fl" style="--x:13%;  --y:71%; --w:248px" data-d="0.35"><img src="images/fl-08.jpg" alt=""></figure>
+          <figure class="fl" style="--x:44%;  --y:81%; --w:134px" data-d="0.85"><img src="images/fl-09.jpg" alt=""></figure>
+          <figure class="fl" style="--x:73%;  --y:64%; --w:188px" data-d="0.60"><img src="images/fl-10.jpg" alt=""></figure>
         </div>
+
+        <div class="hero-copy">
+          <p class="hero-kicker mono" id="heroKicker">THE LAB — FRIPERIE VINTAGE, SAINT-JUNIEN</p>
+          <h1 class="hero-title">
+            <span class="hero-line1" id="heroLine1">Du vintage choisi,</span>
+            <span class="hero-line2" id="heroLine2">
+              <span class="hl">pièce par</span>
+              <span class="grow" id="grow1"><img src="images/hero.jpg" alt="Portant de vestes et chemises vintage aux couleurs variées"></span>
+              <span class="hl">pièce.</span>
+            </span>
+          </h1>
+        </div>
+
+        <!-- calque plein écran : titre blanc sur l'image -->
+        <div class="spot" id="spot" aria-hidden="true">
+          <h2 class="spot-intro" id="spotIntro"><span>Friperie</span> <span>vintage</span> <span>—</span> <span>place</span> <span>Guy</span> <span>Mocquet.</span></h2>
+        </div>
+
       </div>
     </section>
 
-
-    <!-- Interest : manifeste -->
-    <section class="manifesto" id="univers">
-      <p class="manifesto-text" data-scrub>
-        Chaque pièce
-        <span class="inline-img" style="background-image:url(assets/img/demo/p7-640.webp)" role="img" aria-label="Vestes en jean"></span>
-        est choisie à la main, vérifiée, puis mise en rayon.
-        Pas de stock infini : quand elle est partie,
-        <span class="inline-img" style="background-image:url(assets/img/demo/p10-640.webp)" role="img" aria-label="Chemises sur cintres"></span>
-        elle est partie.
-      </p>
+    <!-- ─── SCÈNE 2 · MANIFESTE (remplissage caractère par caractère) ─── -->
+    <section class="scene s-fill" id="manifeste" data-pin="3.5">
+      <div class="pin">
+        <p class="fill-text" id="fillText">Chez The Lab, rien n’arrive en rayon par hasard. Chaque pièce est choisie à la main, vérifiée, puis prête à <span class="boxed" id="boxedPhrase">revivre chez vous<svg class="box-svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path id="boxPath" d="M50,6 C88,4 98,22 97,50 C96,82 76,96 49,95 C16,94 3,76 4,48 C5,18 20,7 50,6 Z"/></svg></span> Du vrai vintage, à prix de friperie.</p>
+      </div>
     </section>
 
-    <!-- Interest : rayons (accordéon horizontal) -->
-    <section class="rayons" id="rayons">
-      <h2 class="section-title">Ce que vous trouverez en rayon</h2>
-      <div class="accordion" role="list">
-        <article class="acc-item is-open" role="listitem" tabindex="0">
-          <img src="assets/img/demo/p7-1200.webp" srcset="assets/img/demo/p7-640.webp 640w, assets/img/demo/p7-1200.webp 1200w" sizes="(max-width: 768px) 86vw, 45vw" width="1200" height="800" alt="Rangée de vestes en jean délavé" loading="lazy" decoding="async">
-          <div class="acc-body">
-            <h3>Denim</h3>
-            <p>Vestes, jeans droits et larges, coupes d'époque dans toutes les tailles.</p>
+    <!-- ─── SCÈNE 3 · SÉLECTION (panneau blanc, masonry parallaxe) ─── -->
+    <section class="collection" id="travaux">
+      <header class="coll-head">
+        <p class="mono ash">LA SÉLECTION</p>
+        <h2 class="coll-title" id="collTitle">Ce qu’on chine pour vous</h2>
+        <p class="coll-sub">Denim, vestes, chemises et sweats — souvent une seule pièce de chaque.</p>
+        <p class="mono ash">HUIT PIÈCES — ARRIVAGES RÉGULIERS</p>
+      </header>
+
+      <div id="collGrid"></div>
+    </section>
+
+    <!-- ─── 5 · DEVISE — train de mots-clés géants sur bande lime ─── -->
+    <div class="band" id="temps">
+      <div class="diag to-lime" aria-hidden="true"></div>
+      <section class="scene s-motto" data-pin="4">
+        <div class="pin motto-pin">
+          <p class="motto-kicker mono" id="mottoKicker">CE QUI FAIT UNE PIÈCE THE LAB</p>
+          <div class="motto-track" id="mottoTrack"></div>
+          <p class="motto-hint mono" id="mottoHint"></p>
+        </div>
+      </section>
+      <div class="diag from-lime" aria-hidden="true"></div>
+    </div>
+
+    <!-- ─── SCÈNE 5 · « UN PROJET, 3 ÉTAPES » → LE PROCESSUS IMMERSIF ─── -->
+    <section class="scene s-night" id="explorer" data-pin="9">
+      <div class="pin">
+
+        <div class="night-line" id="nightLine">
+          <span class="hl nw" id="nw1">Une</span>
+          <span class="hl nw" id="nw2">pièce,</span>
+          <span class="grow" id="grow2"><img src="images/processus.jpg" alt="Mains qui fouillent un portant de chemises vintage"></span>
+          <span class="hl nw" id="nw3">3 étapes.</span>
+        </div>
+
+        <!-- compteur monumental : le numéro d'étape défile comme un odomètre -->
+        <div class="bignum" id="bigNum" aria-hidden="true"><span class="bignum-fixed">0</span><span class="bignum-roll"><span id="bigRoll"></span></span></div>
+
+        <!-- contenu de l'étape, à gauche -->
+        <div class="psteps" id="psteps"></div>
+
+        <p class="steps-cta" id="stepsCta">
+          <a href="#contact" data-nav id="stepsCtaLink">Passer en boutique →<svg class="cta-oval" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path id="ctaOval" d="M50,6 C88,4 98,22 97,50 C96,82 76,96 49,95 C16,94 3,76 4,48 C5,18 20,7 50,6 Z"/></svg></a>
+        </p>
+
+        <!-- rideau de lames : essuie le plein écran SANS jamais dézoomer -->
+        <div class="wipe" id="nightWipe" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+      </div>
+    </section>
+
+    <!-- ─── 8 · PREUVE SOCIALE — citation en rideau, guillemets géants ─── -->
+    <section class="scene s-quote" id="temoignage" data-pin="3">
+      <div class="pin">
+        <div class="q-stack">
+          <span class="q-glyph" aria-hidden="true">“</span>
+          <blockquote class="q-block">
+            <p class="q-text" id="quoteText"></p>
+          </blockquote>
+          <div class="q-sign">
+            <span class="q-rule" aria-hidden="true"></span>
+            <div class="q-sign-row" id="quoteAuthorWrap">
+              <p class="q-name" id="quoteAuthor"></p>
+              <p class="q-ctx mono ash" id="figKicker"></p>
+              <p class="q-fig" id="bigFigure"><span class="fig-pre" id="figPre"></span><span class="fig-val" id="figVal">0</span><span class="fig-unit" id="figUnit"></span></p>
+            </div>
           </div>
-        </article>
-        <article class="acc-item" role="listitem" tabindex="0">
-          <img src="assets/img/demo/p8-1200.webp" srcset="assets/img/demo/p8-640.webp 640w, assets/img/demo/p8-1200.webp 1200w" sizes="(max-width: 768px) 86vw, 45vw" width="1200" height="801" alt="Portant de vestes et chemises vintage" loading="lazy" decoding="async">
-          <div class="acc-body">
-            <h3>Vestes</h3>
-            <p>Blousons, workwear, cuir et pièces de saison, sélectionnés à l'unité.</p>
-          </div>
-        </article>
-        <article class="acc-item" role="listitem" tabindex="0">
-          <img src="assets/img/demo/p10-1200.webp" srcset="assets/img/demo/p10-640.webp 640w, assets/img/demo/p10-1200.webp 1200w" sizes="(max-width: 768px) 86vw, 45vw" width="1200" height="675" alt="Chemises colorées sur cintres en bois" loading="lazy" decoding="async">
-          <div class="acc-body">
-            <h3>Sportswear</h3>
-            <p>Sweats, chemises et maillots des années 80 à 2000.</p>
-          </div>
-        </article>
-        <article class="acc-item" role="listitem" tabindex="0">
-          <img src="assets/img/demo/p5-1200.webp" srcset="assets/img/demo/p5-640.webp 640w, assets/img/demo/p5-1200.webp 1200w" sizes="(max-width: 768px) 86vw, 45vw" width="1200" height="1810" alt="Portants de vêtements et accessoires vintage à la lumière tamisée" loading="lazy" decoding="async">
-          <div class="acc-body">
-            <h3>Accessoires</h3>
-            <p>Boots, sneakers, sacs et bonnets pour finir la tenue.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Interest : bento -->
-    <section class="why">
-      <h2 class="section-title">Pourquoi passer au Lab</h2>
-      <div class="bento">
-        <figure class="cell cell-a">
-          <img src="assets/img/demo/p1-1200.webp" srcset="assets/img/demo/p1-640.webp 640w, assets/img/demo/p1-1200.webp 1200w" sizes="(max-width: 768px) 86vw, 45vw" width="1200" height="800" alt="Intérieur lumineux d'une friperie avec de longs portants" loading="lazy" decoding="async">
-          <figcaption>
-            <h3>Une sélection, pas un entrepôt</h3>
-            <p>Moins de pièces, mieux choisies, rangées pour qu'on s'y retrouve.</p>
-          </figcaption>
-        </figure>
-        <div class="cell cell-b">
-          <h3>Des arrivages chaque semaine</h3>
-          <p>Le rayon change souvent. Les nouveautés passent d'abord sur Instagram.</p>
-          <a href="https://www.instagram.com/thelab.vintage/" class="link-arrow" target="_blank" rel="noopener">@thelab.vintage</a>
-        </div>
-        <div class="cell cell-c">
-          <h3>Seconde main</h3>
-          <p>Une pièce qui revit, c'est un vêtement neuf en moins à produire.</p>
-        </div>
-        <figure class="cell cell-d">
-          <img src="assets/img/demo/p9-1200.webp" srcset="assets/img/demo/p9-640.webp 640w, assets/img/demo/p9-1200.webp 1200w" sizes="(max-width: 768px) 86vw, 45vw" width="1200" height="1805" alt="Mains qui fouillent un portant de vêtements" loading="lazy" decoding="async">
-        </figure>
-      </div>
-    </section>
-
-    <!-- Desire : la boutique, défilement horizontal au scroll -->
-    <section class="boutique" id="boutique">
-      <div class="pan-sticky">
-        <div class="pan-track">
-          <div class="pan-intro">
-            <h2 class="section-title">Venez fouiller sur place</h2>
-            <p>Des portants pleins, des pièces qui changent chaque semaine. Prenez le temps de chiner.</p>
-          </div>
-          <figure class="pan-item pan-tall"><img src="assets/img/demo/p2-1200.webp" srcset="assets/img/demo/p2-640.webp 640w, assets/img/demo/p2-1200.webp 1200w" sizes="(max-width: 768px) 86vw, 45vw" width="1200" height="1600" alt="Mur peint et portants de t-shirts graphiques" loading="lazy" decoding="async"></figure>
-          <figure class="pan-item pan-wide"><img src="assets/img/demo/p4-1200.webp" srcset="assets/img/demo/p4-640.webp 640w, assets/img/demo/p4-1200.webp 1200w" sizes="(max-width: 768px) 86vw, 45vw" width="1200" height="799" alt="Boutique vintage remplie de vêtements et d'objets" loading="lazy" decoding="async"></figure>
-          <figure class="pan-item pan-tall pan-low"><img src="assets/img/demo/p6-1200.webp" srcset="assets/img/demo/p6-640.webp 640w, assets/img/demo/p6-1200.webp 1200w" sizes="(max-width: 768px) 86vw, 45vw" width="1200" height="1800" alt="Espace de boutique avec mur en briques et tables de vêtements pliés" loading="lazy" decoding="async"></figure>
-          <figure class="pan-item pan-wide pan-high"><img src="assets/img/demo/p10-1200.webp" srcset="assets/img/demo/p10-640.webp 640w, assets/img/demo/p10-1200.webp 1200w" sizes="(max-width: 768px) 86vw, 45vw" width="1200" height="675" alt="Chemises colorées alignées sur des cintres en bois" loading="lazy" decoding="async"></figure>
-          <figure class="pan-item pan-tall"><img src="assets/img/demo/p9-1200.webp" srcset="assets/img/demo/p9-640.webp 640w, assets/img/demo/p9-1200.webp 1200w" sizes="(max-width: 768px) 86vw, 45vw" width="1200" height="1805" alt="Mains qui fouillent un portant de vêtements" loading="lazy" decoding="async"></figure>
         </div>
       </div>
     </section>
 
-    <!-- Moment de marque : grand logotype révélé au scroll -->
-    <section class="wordmark" aria-label="The Lab">
-      <p class="wordmark-text" aria-hidden="true"><span>T</span><span>H</span><span>E</span><span class="gap"></span><span>L</span><span>A</span><span>B</span><span class="dot">.</span></p>
-    </section>
+    <!-- ─── SCÈNE 9 · OBJECTIONS — PHRASES + TRAÎNÉE D'IMAGES SOUS LA SOURIS ─── -->
+    <section class="scene s-final" id="final" data-pin="2.6">
+      <div class="pin">
+        <p class="final-text">
+          <span class="fs" id="fs1">Pas de neuf.</span>
+          <span class="fs" id="fs2">Pas de série.</span>
+          <span class="fs" id="fs3">Pas de frime.</span><br>
+          <span class="fs" id="fs4">Juste du vintage, <span class="pill" id="pillPhrase">bien choisi.<svg class="pill-svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path id="pillPath" d="M50,6 C88,4 98,22 97,50 C96,82 76,96 49,95 C16,94 3,76 4,48 C5,18 20,7 50,6 Z"/></svg></span></span>
+        </p>
 
-    <!-- Action -->
-    <section class="infos" id="infos">
-      <h2 class="cta-title">On vous attend<br>place Guy Mocquet.</h2>
-      <div class="infos-grid">
-        <div>
-          <h3>Adresse</h3>
-          <p>Place Guy Mocquet<br>87200 Saint-Junien</p>
-        </div>
-        <div>
-          <h3>Horaires</h3>
-          <!-- À confirmer avec la boutique -->
-          <p>Mardi au samedi<br>10h - 12h30 et 14h - 19h</p>
-        </div>
-        <div>
-          <h3>Suivre les arrivages</h3>
-          <p><a href="https://www.instagram.com/thelab.vintage/" target="_blank" rel="noopener">@thelab.vintage</a></p>
-          <!-- TODO : remplacer href par l'adresse exacte de la page Facebook de The Lab -->
-          <p class="social-secondary"><a href="https://www.facebook.com/" target="_blank" rel="noopener">Aussi sur Facebook</a></p>
+        <!-- réserve d'images pour la traînée sous la souris -->
+        <div class="trail" id="trail" aria-hidden="true">
+          <img src="images/trail-01.jpg"   style="--tw:150px" alt="">
+          <img src="images/trail-02.jpg"   style="--tw:190px" alt="">
+          <img src="images/trail-03.jpg"  style="--tw:120px" alt="">
+          <img src="images/trail-04.jpg"  style="--tw:200px" alt="">
+          <img src="images/trail-05.jpg" style="--tw:96px"  alt="">
+          <img src="images/trail-06.jpg"  style="--tw:170px" alt="">
+          <img src="images/trail-07.jpg"  style="--tw:34px"  alt="">
+          <img src="images/trail-08.jpg"  style="--tw:140px" alt="">
+          <img src="images/trail-09.jpg"  style="--tw:200px" alt="">
+          <img src="images/trail-10.jpg" style="--tw:110px" alt="">
+          <img src="images/trail-11.jpg"  style="--tw:28px"  alt="">
+          <img src="images/trail-12.jpg"  style="--tw:160px" alt="">
+          <img src="images/trail-13.jpg"  style="--tw:130px" alt="">
+          <img src="images/trail-14.jpg"  style="--tw:180px" alt="">
+          <img src="images/trail-15.jpg"  style="--tw:40px"  alt="">
+          <img src="images/trail-16.jpg"  style="--tw:150px" alt="">
+          <img src="images/trail-17.jpg"  style="--tw:120px" alt="">
+          <img src="images/trail-18.jpg"  style="--tw:200px" alt="">
+          <img src="images/trail-19.jpg" style="--tw:100px" alt="">
+          <img src="images/trail-20.jpg"  style="--tw:170px" alt="">
         </div>
       </div>
-      <a class="btn btn-accent btn-lg" href="https://www.google.com/maps/search/?api=1&query=Place+Guy+Mocquet+87200+Saint-Junien" target="_blank" rel="noopener">Nous trouver</a>
     </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="footer" id="contact">
+      <p class="footer-kicker mono ash reveal">UNE PIÈCE VOUS A TAPÉ DANS L’ŒIL ?</p>
+      <a class="footer-mail reveal" href="mailto:contact@thelab-vintage.fr"><span class="footer-mail-text">contact@thelab-vintage.fr</span></a>
+      <p class="footer-reassurance mono ash reveal">PLACE GUY MOCQUET — 87200 SAINT-JUNIEN</p>
+      <h2 class="footer-name" id="footerName" aria-label="The Lab">The Lab</h2>
+      <div class="footer-bottom">
+        <p class="mono ash">© 2026 — SAINT-JUNIEN, FRANCE</p>
+        <p class="mono"><a href="https://www.instagram.com/thelab.vintage/" target="_blank" rel="noopener">INSTAGRAM ↗</a></p>
+        <p class="mono ash">GENUINE VINTAGE STORE</p>
+      </div>
+      <nav class="footer-legal mono" aria-label="Informations légales">
+        <a href="mentions-legales.html">MENTIONS LÉGALES</a>
+        <a href="confidentialite.html">CONFIDENTIALITÉ</a>
+      </nav>
+    </footer>
+
   </main>
 
-  <footer class="footer">
-    <span class="logo-badge">The Lab.</span>
-    <nav aria-label="Liens légaux">
-      <a href="#">Mentions légales</a>
-      <a href="#">Confidentialité</a>
-    </nav>
-    <!-- TODO : même adresse Facebook ici -->
-    <a class="footer-social" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
-    <small>© 2026 The Lab Vintage Store</small>
-  </footer>
+  <!-- ══════════ CHROME FIXE — barre flottante en haut ══════════ -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="assets/js/app.js?v=12" defer></script>
-  <script src="assets/js/ascii-bg.js?v=3" defer></script>
+  <header class="dock" id="dock">
+    <a class="dock-wordmark" href="#hero" data-nav>The Lab</a>
+    <nav class="dock-nav" aria-label="Navigation principale">
+      <a class="dock-link mono" href="#travaux" data-nav>PIÈCES</a>
+      <a class="dock-link mono" href="#explorer" data-nav data-landing="0.8">MÉTHODE</a>
+    </nav>
+    <a class="dock-cta mono" href="#contact" data-nav>VENIR</a>
+  </header>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

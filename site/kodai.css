@@ -1,0 +1,80 @@
+/* Mise en conformité Kodaï — compléments hors moteur (liens légaux, pages annexes).
+   Réutilise les tokens de styles.css : mêmes polices, même accent, même thème. */
+
+.footer-legal {
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 28px;
+  margin-top: 22px; padding-bottom: 6px; color: var(--ash);
+}
+.footer-legal a { transition: color .2s; }
+.footer-legal a:hover { color: var(--ink); }
+
+/* pages annexes */
+.page {
+  max-width: 760px; margin: 0 auto;
+  padding: 120px var(--gutter) 96px;
+}
+.page-top {
+  position: fixed; top: 10px; left: 10px; right: 10px; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 18px; background: var(--white); border-radius: 8px;
+  box-shadow: 0 1px 0 rgba(var(--ink-rgb), 0.06);
+}
+.page-top .brand { font-size: 18px; }
+.page-top .back {
+  background: var(--lime); color: var(--lime-ink);
+  padding: 9px 14px; border-radius: 6px;
+}
+.page h1 { font-size: var(--t-heading); line-height: 1.02; letter-spacing: -0.03em; margin: 14px 0 40px; }
+.page h2 { font-size: 24px; letter-spacing: -0.015em; margin: 44px 0 12px; }
+.page p, .page li { font-size: 17px; line-height: 1.55; color: rgba(var(--ink-rgb), 0.82); }
+.page p + p { margin-top: 10px; }
+.page ul { margin: 8px 0 0; padding-left: 0; }
+.page li { padding-left: 18px; position: relative; }
+.page li + li { margin-top: 6px; }
+.page li::before { content: ""; position: absolute; left: 0; top: .68em; width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 1px rgba(var(--ink-rgb), 0.25); }
+.page a.u { text-decoration: underline; text-underline-offset: 3px; }
+.page .todo { background: var(--lime); color: var(--lime-ink); padding: 0 4px; border-radius: 2px; }
+.page-foot { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--ink-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+.notfound { min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 24px; }
+.notfound .big { font-size: clamp(120px, 34vw, 340px); line-height: .85; letter-spacing: -0.05em; }
+.notfound p { margin: 18px 0 30px; font-size: 19px; }
+.notfound a { display: inline-block; background: var(--lime); color: var(--lime-ink); padding: 14px 20px; border-radius: 6px; }
+
+@media (max-width: 480px) {
+  .page { padding-top: 104px; }
+  .page h1 { font-size: 38px; }
+}
+
+/* Logo de la boutique (photo de profil Instagram, 150 px : à remplacer par le logo HD) */
+.dock::before {
+  content: ""; flex: none;
+  width: 30px; height: 30px; margin-left: -8px; margin-right: 2px;
+  border-radius: 50%;
+  background: url('images/logo.jpg') center/cover;
+}
+.footer-kicker::before {
+  content: ""; display: block;
+  width: 72px; height: 72px; margin: 0 auto 26px;
+  border-radius: 50%;
+  background: url('images/logo.jpg') center/cover;
+}
+.page-top .brand { display: inline-flex; align-items: center; gap: 10px; }
+.page-top .brand::before {
+  content: ""; width: 30px; height: 30px; border-radius: 50%;
+  background: url('images/logo.jpg') center/cover;
+}
+@media (max-width: 900px) {
+  .dock::before { width: 28px; height: 28px; margin-left: -6px; margin-right: -2px; }
+  .dock-wordmark { margin-right: auto; }
+}
+
+/* Barre du haut plus présente sur ordinateur (le mobile garde sa barre pleine largeur) */
+@media (min-width: 901px) {
+  .dock { min-width: 620px; padding: 12px 12px 12px 26px; gap: 10px; }
+  .dock::before { width: 42px; height: 42px; margin-left: -12px; margin-right: 4px; }
+  .dock-wordmark { font-size: 23px; margin-right: auto; padding-right: 28px; }
+  .dock-nav { gap: 10px; margin-right: 16px; }
+  .dock-link { padding: 12px 12px; font-size: 13px; }
+  .dock-cta { padding: 14px 22px; font-size: 13px; }
+}

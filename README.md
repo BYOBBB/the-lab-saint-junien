@@ -13,6 +13,7 @@ Friperie / vintage store à Saint-Junien (87200).
 - Contrat maintenance : —
 
 ## Historique
+- 01/10/2026 : démo refaite avec la nouvelle méthode (`site-immersif-skill`) : thème clair, accent jaune #FEDE5A, preuve en masonry. Ancienne démo gpt-taste archivée dans `_admin/ancienne-demo-gpt-taste/` (non suivie par git, reste dans l'historique). Mise en conformité faite : polices auto-hébergées, SEO + Open Graph + JSON-LD en dur, noindex (démo), pages légales, 404, robots.txt, sitemap.xml, `_headers` sans domaine externe. Aperçu local : config `thelab-immersif` (port 4385)
 - 30/09/2026 : couleurs de la marque (jaune #FEDE5A / violet #8256D5, relevées sur la photo de profil Instagram, à confirmer avec le logo HD) à la place de l'indigo ; logo provisoire « THE LAB. » dans le menu et le pied de page ; nom de la boutique dans le haut de page
 - 30/09/2026 : site déplacé dans `site/` (seul dossier à publier) + `site/_headers` (modèle, CSP à adapter : GSAP, Fontshare)
 - 29/09/2026 : ouverture du dossier projet, maquette démo de l'accueil (index.html), mise sur GitHub (privé)
@@ -27,7 +28,21 @@ Friperie / vintage store à Saint-Junien (87200).
 - [ ] Audit sécurité (fiche 7)
 - [ ] Mise en ligne
 
-## Maquette démo (29/09/2026)
+## Contenu provisoire (démo du 01/10/2026)
+
+Toute modif de contenu : `site/content.js` uniquement (+ textes miroirs dans `site/index.html`). Nouvelles photos : `site/images/`, mêmes noms de fichiers.
+
+- **Photos** : 0 photo de la boutique, 41 fichiers Unsplash (36 photos distinctes) — provenance fichier par fichier dans `_admin/sources-photos-unsplash.txt`. À remplacer par les vraies photos
+- **E-mail** `contact@thelab-vintage.fr` : inventé (domaine pas encore choisi), affiché dans le pied de page
+- **Domaine** `thelab-vintage.fr` : provisoire dans canonical, og:url, JSON-LD, sitemap, robots.txt
+- **Témoignage** inventé : « Camille — cliente », chiffre 12 €, citation — à remplacer par un vrai avis (Google / Instagram) avec accord, ou à retirer
+- **Textes déduits** (à valider avec la boutique) : accroche « Du vintage choisi, pièce par pièce. », manifeste, « Chinée / Vérifiée / Abordable », les 3 étapes (on chine / on vérifie / vous trouvez), « Pas de neuf. Pas de série. Pas de frime. », titres des 8 pièces de la sélection (décrivent des photos de banque)
+- **Signature** « GENUINE VINTAGE STORE » : reprise du logo Instagram
+- **Logo** : photo de profil Instagram @thelab.vintage (seule taille disponible : 150×150 px, original dans `_admin/contenu-recu/logo/`) → `site/images/logo.jpg`, utilisée en pastille ronde dans le menu, au-dessus du contact en pied de page, en favicon et apple-touch-icon. **Demander le logo HD** (SVG ou PNG ≥ 1000 px) et remplacer `site/images/logo.jpg` sous le même nom
+- **Pages légales** : tout ce qui est surligné en jaune entre crochets manque (raison sociale, SIRET, n° de la place, téléphone, e-mail, responsable de publication, hébergeur, médiateur)
+- **Facebook** : pas de lien tant que l'adresse exacte de la page n'est pas connue
+
+## Ancienne maquette démo (29/09/2026, archivée)
 
 Page d'accueil seule, pour présenter le projet au client avant le devis.
 Style : `gpt-taste` (sombre, vert « labo », animations GSAP au scroll). Aperçu local : config `thelab` dans `.claude/launch.json` (port 8780).

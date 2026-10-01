@@ -1,0 +1,5 @@
+# Démo : à remplacer à la mise en ligne par « Allow: / » (et retirer noindex de index.html)
+User-agent: *
+Disallow: /
+
+Sitemap: https://thelab-vintage.fr/sitemap.xml
